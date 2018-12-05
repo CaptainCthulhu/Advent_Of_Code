@@ -1,9 +1,6 @@
 import sys
 from storage import Question2 
 
-import sys
-from storage import Question2
-
 var = Question2.Part1
 
 def OffByOne(word1, word2):    
@@ -15,9 +12,6 @@ def OffByOne(word1, word2):
     if len(items) == goal:
         return items
     return False
-    
-
-
 
 for i in range(len(var) - 1):
     for x in range(i, len(var)):

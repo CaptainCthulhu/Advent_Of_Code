@@ -6,7 +6,6 @@ var = Question2.Part1
 two = 0
 three = 0
 
-
 for i in var:
     letters = {}
     for x in i:        

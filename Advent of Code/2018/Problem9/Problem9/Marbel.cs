@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace Problem9
 {
-    class Marbel
+    class Marble
     {
         public int Value;
-        public Marbel Left;
-        public Marbel Right;
+        public Marble Left;
+        public Marble Right;
 
-        public Marbel(int value)
+        public Marble(int value)
         {
             this.Value = value;
         }
 
 
-        public void SetLeftRight(Marbel left, Marbel right)
+        public void SetLeftRight(Marble left, Marble right)
         {
             this.Left = left;
             this.Right = right;
         }
 
-        public static Marbel Add(int value, Marbel currentMarbel)
+        public static Marble Add(int value, Marble currentMarbel)
         {
-            Marbel newMarbel = new Marbel(value);
+            Marble newMarbel = new Marble(value);
             newMarbel.Left = currentMarbel;
             newMarbel.Right = newMarbel.Left.Right;
             newMarbel.Right.Left = newMarbel;            
@@ -34,19 +34,19 @@ namespace Problem9
             return newMarbel;
         }
 
-        public static Marbel Remove(Marbel currentMarbel)
+        public static Marble Remove(Marble currentMarbel)
         {
             currentMarbel.Left.Right = currentMarbel.Right;
             currentMarbel.Right.Left = currentMarbel.Left;
             return currentMarbel.Right;
         }
 
-        public static Marbel GoLeft(Marbel marbel)
+        public static Marble GoLeft(Marble marbel)
         {
             return marbel.Left;
         }
 
-        public static Marbel GoRight(Marbel marbel)
+        public static Marble GoRight(Marble marbel)
         {
             return marbel.Right;
         }

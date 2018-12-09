@@ -23,10 +23,10 @@ namespace Problem9
 
         private static void PlayGame()
         {
-            //Initial Marbel
-            Marbel marbel = new Marbel(0);
+            //Initial Marble
+            Marble marbel = new Marble(0);
             marbel.SetLeftRight(marbel, marbel);
-            Marbel currentMarbel = marbel;
+            Marble currentMarbel = marbel;
             
             while (turn < goal)
             {
@@ -36,15 +36,15 @@ namespace Problem9
                     playerScores[turn % playerScores.Count()] += turn;
                     for (int i = 0; i < 7; i++)
                     {
-                        currentMarbel = Marbel.GoLeft(currentMarbel);                          
+                        currentMarbel = Marble.GoLeft(currentMarbel);                          
                     }
                     playerScores[turn % playerScores.Count()] += currentMarbel.Value;
-                    currentMarbel = Marbel.Remove(currentMarbel);
+                    currentMarbel = Marble.Remove(currentMarbel);
                 }
                 else
                 {                    
-                    currentMarbel = Marbel.GoRight(currentMarbel);                                              
-                    currentMarbel = Marbel.Add(turn, currentMarbel);
+                    currentMarbel = Marble.GoRight(currentMarbel);                                              
+                    currentMarbel = Marble.Add(turn, currentMarbel);
                 }                
             }
         }
